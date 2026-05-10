@@ -60,6 +60,17 @@ public class FajlBeolvasas {
         }
         return rsz;
     }
+// 3.feldat
+    private static int legolcsobb(){
+        int min = fuvarok.get(0).getOsszeg();
+        
+        for(Fuvar f : fuvarok){
+            if(f.getOsszeg() < min){
+                min = f.getOsszeg();
+            }
+        }
+        return min;
+    }
     
  }
    
