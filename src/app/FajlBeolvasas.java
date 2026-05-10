@@ -117,6 +117,26 @@ public class FajlBeolvasas {
         }
         System.out.println("Hány darab autó van a rendszerben: "+db);
     }
+// 7.feladat
+    private static void hanyFitmod() {
+        String[] modok = new String[fuvarok.size()];
+        int db = 0;
+        for(Fuvar f : fuvarok){
+            String mod = f.getFitmod();
+            boolean fizetesMod=false;
+            for(int i = 0;i<db;i++){
+                if(modok[i].equals(mod)){
+                    fizetesMod = true;
+                }
+            }
+            if(!fizetesMod){
+                modok[db] = mod;
+                db++;
+            }
+        }
+        System.out.println("Hányféle fizetési mód van: " + db);
+    }
+    
  }
    
 
