@@ -38,6 +38,29 @@ public class FajlBeolvasas {
         String valasz = i >= N ? "igen" : "nem";
         System.out.println("Minden fuvar fitmod értéke 'igen': " + valasz);
         }
+    
+//1.feladat
+    private static int osszeszFuvar(){
+        int fuv =0;
+        for(Fuvar f : fuvarok){
+            fuv += f.getOsszeg();
+        }
+        return fuv;
+    }
+//2.feladat
+    private static String legdragabbRendszam(){
+        int max = fuvarok.get(0).getOsszeg();
+        String rsz = fuvarok.get(0).getRsz();
+        
+        for(Fuvar f : fuvarok){
+            if(f.getOsszeg() > max){
+                max = f.getOsszeg();
+                rsz = f.getRsz();
+            }
+        }
+        return rsz;
+    }
+    
  }
    
 
