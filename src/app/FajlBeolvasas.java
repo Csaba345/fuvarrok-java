@@ -40,15 +40,15 @@ public class FajlBeolvasas {
         }
     
 //1.feladat
-    private static int osszeszFuvar(){
+    private static void osszeszFuvar(){
         int fuv =0;
         for(Fuvar f : fuvarok){
             fuv += f.getOsszeg();
         }
-        return fuv;
+        System.out.println("Összes fuvar értéke: " + fuv);
     }
 //2.feladat
-    private static String legdragabbRendszam(){
+    private static void legdragabbRendszam(){
         int max = fuvarok.get(0).getOsszeg();
         String rsz = fuvarok.get(0).getRsz();
         
@@ -58,10 +58,10 @@ public class FajlBeolvasas {
                 rsz = f.getRsz();
             }
         }
-        return rsz;
+        System.out.println("Legdrágább fuvar rendszáma: " + rsz);
     }
 // 3.feladat
-    private static int legolcsobb(){
+    private static void legolcsobb(){
         int min = fuvarok.get(0).getOsszeg();
         
         for(Fuvar f : fuvarok){
@@ -69,10 +69,10 @@ public class FajlBeolvasas {
                 min = f.getOsszeg();
             }
         }
-        return min;
+        System.out.println("Legolcsób fuvar forintban: " + min);
     }
 // 4.feladat
-    private static int hanyKartyas(){
+    private static void hanyKartyas(){
         int db = 0;
         
         for(Fuvar f : fuvarok){
@@ -80,9 +80,23 @@ public class FajlBeolvasas {
                 db++;
             }
         }
-        return db;
+        System.out.println("Hány kártyás fizetés volt: " + db);
     }
-
+    
+// 5.feladat
+    private static void mindenFitmod(){
+        int i =0;
+        final int N = fuvarok.size();
+        
+        while (i < N && !fuvarok.get(i).getFitmod().equals("")){
+            i++;
+        } 
+        String valasz = "nem";
+        if(i >=N){
+            valasz = "igen";
+        }
+        System.out.println("Minden fizetési mód meghatároozott: " + valasz);
+    }
  }
    
 
