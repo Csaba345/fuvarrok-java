@@ -136,7 +136,35 @@ public class FajlBeolvasas {
         }
         System.out.println("Hányféle fizetési mód van: " + db);
     }
-    
+//8.feladat
+    private static void autoFuvarok() {
+        String[] rendszamok = new String[fuvarok.size()];
+        int[] darabok = new int[fuvarok.size()];
+        int db =0;
+        for(Fuvar f:fuvarok){
+            String rsz = f.getRsz();
+            boolean tejesitmeny = false;
+            int cs = -1;
+            
+            for(int i=0; i<db;i++){
+                if (rendszamok[i].equals(rsz)) {
+                    tejesitmeny = true;
+                    cs = i;
+                }
+            }
+            if (!tejesitmeny) {
+                rendszamok[db] = rsz;
+                darabok[db] = 1;
+                db = db + 1;
+            } else {
+                darabok[cs] = darabok[cs] + 1;
+            }
+        }
+        System.out.println("8.: Melyik autó mennyi fuvart teljesített:");
+        for (int i = 0; i < db; i++) {
+            System.out.println("   " + rendszamok[i] + " → " + darabok[i] + " fuvar");
+        }
+    }
  }
    
 
