@@ -97,6 +97,26 @@ public class FajlBeolvasas {
         }
         System.out.println("Minden fizetési mód meghatároozott: " + valasz);
     }
+// 6.feladat
+    private static void hanyDBAuto() {
+        String[] rendszamok = new String[fuvarok.size()];
+        int db = 0;
+        for(Fuvar f : fuvarok){
+            String rsz = f.getRsz();
+            boolean benneVan = false;
+            
+            for(int i=0;i < db; i++){
+                if(rendszamok[i].equals(rsz)){
+                    benneVan = true;
+                }
+            }
+            if(!benneVan){
+                rendszamok[db]= rsz;
+                db++;
+            }
+        }
+        System.out.println("Hány darab autó van a rendszerben: "+db);
+    }
  }
    
 
