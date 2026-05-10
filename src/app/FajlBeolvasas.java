@@ -60,7 +60,7 @@ public class FajlBeolvasas {
         }
         return rsz;
     }
-// 3.feldat
+// 3.feladat
     private static int legolcsobb(){
         int min = fuvarok.get(0).getOsszeg();
         
@@ -71,7 +71,18 @@ public class FajlBeolvasas {
         }
         return min;
     }
-    
+// 4.feladat
+    private static int hanyKartyas(){
+        int db = 0;
+        
+        for(Fuvar f : fuvarok){
+            if(f.getFitmod().equals("kartya")){
+                db++;
+            }
+        }
+        return db;
+    }
+
  }
    
 
